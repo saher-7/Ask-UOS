@@ -1,0 +1,267 @@
+2025-10-01 19:03:24,926 - INFO - Starting University of Sargodha document collection...
+2025-10-01 19:03:24,926 - INFO - 
+Phase 1: Downloading known PDF documents...
+2025-10-01 19:03:24,926 - INFO - Downloading PDF: https://su.edu.pk/upload/rti/MS MSc Hons MPhil & PhD Rules - 2020.pdf
+2025-10-01 19:03:27,491 - ERROR - Error downloading https://su.edu.pk/upload/rti/MS MSc Hons MPhil & PhD Rules - 2020.pdf: 'charmap' codec can't encode character '\U0001f4e5' in position 1: character maps to <undefined>
+2025-10-01 19:03:28,494 - INFO - 
+Phase 2: Scraping web pages and finding PDFs...
+2025-10-01 19:03:28,494 - INFO - Scraping: https://su.edu.pk/Rules-and-Regulations
+2025-10-01 19:03:38,968 - INFO - Scraped: rules_Rules-and-Regulations.txt (112160 chars)
+2025-10-01 19:03:49,179 - INFO - Found 15 PDF links on https://su.edu.pk/Rules-and-Regulations
+2025-10-01 19:03:51,180 - INFO - Scraping: https://su.edu.pk/admissions
+2025-10-01 19:03:52,573 - INFO - Scraped: rules_admissions.txt (3091 chars)
+2025-10-01 19:03:54,401 - INFO - Found 15 PDF links on https://su.edu.pk/admissions
+2025-10-01 19:03:56,402 - INFO - Scraping: https://su.edu.pk/academics
+2025-10-01 19:03:57,998 - INFO - Scraped: rules_academics.txt (3091 chars)
+2025-10-01 19:03:59,757 - INFO - Found 15 PDF links on https://su.edu.pk/academics
+2025-10-01 19:04:01,762 - INFO - 
+Phase 3: Downloading 9 discovered PDFs...
+2025-10-01 19:04:01,762 - INFO - Downloading PDF: https://su.edu.pk/upload/Policy%20for%20Students%20with%20Disabilities%202021-%20Amended.pdf
+2025-10-01 19:04:04,021 - ERROR - Error downloading https://su.edu.pk/upload/Policy%20for%20Students%20with%20Disabilities%202021-%20Amended.pdf: 'charmap' codec can't encode character '\U0001f4e5' in position 1: character maps to <undefined>
+2025-10-01 19:04:05,024 - INFO - Downloading PDF: https://su.edu.pk/upload/rti/budget.pdf
+2025-10-01 19:04:06,947 - ERROR - Error downloading https://su.edu.pk/upload/rti/budget.pdf: 'charmap' codec can't encode character '\U0001f4e5' in position 1: character maps to <undefined>
+2025-10-01 19:04:07,950 - INFO - Downloading PDF: https://su.edu.pk/upload/Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf
+2025-10-01 19:04:10,226 - ERROR - Error downloading https://su.edu.pk/upload/Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf: 'charmap' codec can't encode character '\U0001f4e5' in position 1: character maps to <undefined>
+2025-10-01 19:04:11,229 - INFO - Downloading PDF: https://su.edu.pk/upload/Fee Structure - Fall 2025.pdf
+2025-10-01 19:04:13,546 - ERROR - Error downloading https://su.edu.pk/upload/Fee Structure - Fall 2025.pdf: 'charmap' codec can't encode character '\U0001f4e5' in position 1: character maps to <undefined>
+2025-10-01 19:04:14,555 - INFO - Downloading PDF: http://www.surveyofpakistan.gov.pk/SiteImage/Misc/files/political_map_pakistan.pdf
+2025-10-01 19:04:15,644 - ERROR - Error downloading http://www.surveyofpakistan.gov.pk/SiteImage/Misc/files/political_map_pakistan.pdf: 'charmap' codec can't encode character '\U0001f4e5' in position 1: character maps to <undefined>
+2025-10-01 19:04:16,647 - INFO - Downloading PDF: https://su.edu.pk/upload/downloads/Guidelines%20for%20Applicants%20%E2%80%93%20Admission%20Fall%202023%202_1692578994.pdf
+2025-10-01 19:04:19,384 - ERROR - Error downloading https://su.edu.pk/upload/downloads/Guidelines%20for%20Applicants%20%E2%80%93%20Admission%20Fall%202023%202_1692578994.pdf: 'charmap' codec can't encode character '\U0001f4e5' in position 1: character maps to <undefined>
+2025-10-01 19:04:20,388 - INFO - Downloading PDF: https://su.edu.pk/upload/UOS-Prospectus-2025.pdf
+2025-10-01 19:04:22,979 - ERROR - Error downloading https://su.edu.pk/upload/UOS-Prospectus-2025.pdf: 'charmap' codec can't encode character '\U0001f4e5' in position 1: character maps to <undefined>
+2025-10-01 19:04:23,982 - INFO - Downloading PDF: https://su.edu.pk/upload/rti/service_statutes_2006.pdf
+2025-10-01 19:04:26,316 - ERROR - Error downloading https://su.edu.pk/upload/rti/service_statutes_2006.pdf: 'charmap' codec can't encode character '\U0001f4e5' in position 1: character maps to <undefined>
+2025-10-01 19:04:27,318 - INFO - Downloading PDF: https://su.edu.pk/upload/rti/The_University_of_Sargodha_Ordinance _2002.pdf
+2025-10-01 19:04:29,028 - ERROR - Error downloading https://su.edu.pk/upload/rti/The_University_of_Sargodha_Ordinance _2002.pdf: 'charmap' codec can't encode character '\U0001f4e5' in position 1: character maps to <undefined>
+2025-10-01 19:04:30,030 - INFO - 
+Phase 4: Manual collection reminder
+2025-10-01 19:04:30,030 - INFO - Collection completed! Stats: {'pdfs_downloaded': 0, 'pages_scraped': 3, 'pdfs_found': 9}
+2025-10-01 19:05:04,850 - INFO - Starting University of Sargodha document collection...
+2025-10-01 19:05:04,850 - INFO - 
+Phase 1: Downloading known PDF documents...
+2025-10-01 19:05:04,850 - INFO - Downloading PDF: https://su.edu.pk/upload/rti/MS MSc Hons MPhil & PhD Rules - 2020.pdf
+2025-10-01 19:05:07,573 - INFO - Downloaded: MSMScHonsMPhilPhDRules-2020.pdf (607705 bytes)
+2025-10-01 19:05:08,574 - INFO - 
+Phase 2: Scraping web pages and finding PDFs...
+2025-10-01 19:05:08,574 - INFO - Scraping: https://su.edu.pk/Rules-and-Regulations
+2025-10-01 19:05:10,256 - INFO - Scraped: rules_Rules-and-Regulations.txt (112160 chars)
+2025-10-01 19:05:11,456 - INFO - Found 15 PDF links on https://su.edu.pk/Rules-and-Regulations
+2025-10-01 19:05:13,457 - INFO - Scraping: https://su.edu.pk/admissions
+2025-10-01 19:05:14,219 - INFO - Scraped: rules_admissions.txt (3091 chars)
+2025-10-01 19:05:14,956 - INFO - Found 15 PDF links on https://su.edu.pk/admissions
+2025-10-01 19:05:16,967 - INFO - Scraping: https://su.edu.pk/academics
+2025-10-01 19:05:17,719 - INFO - Scraped: rules_academics.txt (3091 chars)
+2025-10-01 19:05:18,474 - INFO - Found 15 PDF links on https://su.edu.pk/academics
+2025-10-01 19:05:20,477 - INFO - 
+Phase 3: Downloading 9 discovered PDFs...
+2025-10-01 19:05:20,477 - INFO - Downloading PDF: https://su.edu.pk/upload/UOS-Prospectus-2025.pdf
+2025-10-01 19:07:04,002 - INFO - Downloaded: UOS-Prospectus-2025.pdf (52004109 bytes)
+2025-10-01 19:07:05,003 - INFO - Downloading PDF: https://su.edu.pk/upload/Policy%20for%20Students%20with%20Disabilities%202021-%20Amended.pdf
+2025-10-01 19:07:06,493 - INFO - Downloaded: Policy20for20Students20with20Disabilities202021-20Amended.pdf (317322 bytes)
+2025-10-01 19:07:07,494 - INFO - Downloading PDF: https://su.edu.pk/upload/Fee Structure - Fall 2025.pdf
+2025-10-01 19:07:09,382 - INFO - Downloaded: FeeStructure-Fall2025.pdf (1259448 bytes)
+2025-10-01 19:07:10,392 - INFO - Downloading PDF: https://su.edu.pk/upload/rti/The_University_of_Sargodha_Ordinance _2002.pdf
+2025-10-01 19:07:11,866 - INFO - Downloaded: The_University_of_Sargodha_Ordinance_2002.pdf (315962 bytes)
+2025-10-01 19:07:12,874 - INFO - Downloading PDF: https://su.edu.pk/upload/Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf
+2025-10-01 19:07:14,656 - INFO - Downloaded: Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf (894491 bytes)
+2025-10-01 19:07:15,657 - INFO - Downloading PDF: https://su.edu.pk/upload/downloads/Guidelines%20for%20Applicants%20%E2%80%93%20Admission%20Fall%202023%202_1692578994.pdf
+2025-10-01 19:07:17,275 - INFO - Downloaded: Guidelines20for20Applicants20E2809320Admission20Fall202023202_1692578994.pdf (460274 bytes)
+2025-10-01 19:07:18,276 - INFO - Downloading PDF: https://su.edu.pk/upload/rti/budget.pdf
+2025-10-01 19:07:20,579 - INFO - Downloaded: budget.pdf (2388092 bytes)
+2025-10-01 19:07:21,580 - INFO - Downloading PDF: http://www.surveyofpakistan.gov.pk/SiteImage/Misc/files/political_map_pakistan.pdf
+2025-10-01 19:07:38,044 - INFO - Downloaded: political_map_pakistan.pdf (1021812 bytes)
+2025-10-01 19:07:39,046 - INFO - Downloading PDF: https://su.edu.pk/upload/rti/service_statutes_2006.pdf
+2025-10-01 19:07:45,121 - INFO - Downloaded: service_statutes_2006.pdf (10996605 bytes)
+2025-10-01 19:07:46,122 - INFO - 
+Phase 4: Manual collection reminder
+2025-10-01 19:07:46,122 - INFO - Collection completed! Stats: {'pdfs_downloaded': 10, 'pages_scraped': 3, 'pdfs_found': 9}
+2025-10-01 20:42:25,158 - INFO -  Starting University of Sargodha document collection...
+2025-10-01 20:42:25,158 - INFO - 
+ Phase 1: Downloading known PDF documents...
+2025-10-01 20:42:25,158 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/MS MSc Hons MPhil & PhD Rules - 2020.pdf
+2025-10-01 20:42:32,225 - INFO -  Downloaded: MSMScHonsMPhilPhDRules-2020.pdf (607705 bytes)
+2025-10-01 20:42:33,227 - INFO - 
+ Phase 2: Scraping web pages and finding PDFs...
+2025-10-01 20:42:33,227 - INFO -  Scraping: https://su.edu.pk/Rules-and-Regulations
+2025-10-01 20:42:37,429 - INFO -  Scraped: rules_Rules-and-Regulations.txt (113023 chars)
+2025-10-01 20:42:40,744 - INFO -  Found 15 PDF links on https://su.edu.pk/Rules-and-Regulations
+2025-10-01 20:42:42,750 - INFO -  Scraping: https://su.edu.pk/admissions
+2025-10-01 20:42:44,248 - INFO -  Scraped: rules_admissions.txt (3096 chars)
+2025-10-01 20:42:45,697 - INFO -  Found 15 PDF links on https://su.edu.pk/admissions
+2025-10-01 20:42:47,699 - INFO -  Scraping: https://su.edu.pk/academics
+2025-10-01 20:42:49,436 - INFO -  Scraped: rules_academics.txt (3096 chars)
+2025-10-01 20:42:50,835 - INFO -  Found 15 PDF links on https://su.edu.pk/academics
+2025-10-01 20:42:52,840 - INFO - 
+ Phase 3: Downloading 9 discovered PDFs...
+2025-10-01 20:42:52,840 - INFO -  Downloading PDF: http://www.surveyofpakistan.gov.pk/SiteImage/Misc/files/political_map_pakistan.pdf
+2025-10-01 20:42:55,259 - INFO -  Downloaded: political_map_pakistan.pdf (1021812 bytes)
+2025-10-01 20:42:56,275 - INFO -  Downloading PDF: https://su.edu.pk/upload/downloads/Guidelines%20for%20Applicants%20%E2%80%93%20Admission%20Fall%202023%202_1692578994.pdf
+2025-10-01 20:42:59,772 - INFO -  Downloaded: Guidelines20for20Applicants20E2809320Admission20Fall202023202_1692578994.pdf (460274 bytes)
+2025-10-01 20:43:00,775 - INFO -  Downloading PDF: https://su.edu.pk/upload/Fee Structure - Fall 2025.pdf
+2025-10-01 20:43:06,759 - INFO -  Downloaded: FeeStructure-Fall2025.pdf (1259448 bytes)
+2025-10-01 20:43:07,766 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/budget.pdf
+2025-10-01 20:43:15,892 - INFO -  Downloaded: budget.pdf (2388092 bytes)
+2025-10-01 20:43:16,900 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/service_statutes_2006.pdf
+2025-10-01 20:43:35,000 - INFO -  Downloaded: service_statutes_2006.pdf (10996605 bytes)
+2025-10-01 20:43:36,001 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/The_University_of_Sargodha_Ordinance _2002.pdf
+2025-10-01 20:43:38,538 - INFO -  Downloaded: The_University_of_Sargodha_Ordinance_2002.pdf (315962 bytes)
+2025-10-01 20:43:39,543 - INFO -  Downloading PDF: https://su.edu.pk/upload/Policy%20for%20Students%20with%20Disabilities%202021-%20Amended.pdf
+2025-10-01 20:43:41,822 - INFO -  Downloaded: Policy20for20Students20with20Disabilities202021-20Amended.pdf (317322 bytes)
+2025-10-01 20:43:42,827 - INFO -  Downloading PDF: https://su.edu.pk/upload/Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf
+2025-10-01 20:43:45,908 - INFO -  Downloaded: Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf (894491 bytes)
+2025-10-01 20:43:46,913 - INFO -  Downloading PDF: https://su.edu.pk/upload/UOS-Prospectus-2025.pdf
+2025-10-01 20:44:25,225 - INFO -  Downloaded: UOS-Prospectus-2025.pdf (52004109 bytes)
+2025-10-01 20:44:26,228 - INFO - 
+ Phase 4: Manual collection reminder
+2025-10-01 20:44:26,228 - INFO -  Collection completed! Stats: {'pdfs_downloaded': 10, 'pages_scraped': 3, 'pdfs_found': 9}
+2025-10-01 20:53:08,169 - INFO -  Starting University of Sargodha document collection...
+2025-10-01 20:53:08,169 - INFO - 
+ Phase 1: Downloading known PDF documents...
+2025-10-01 20:53:08,169 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/MS MSc Hons MPhil & PhD Rules - 2020.pdf
+2025-10-01 20:53:11,468 - INFO -  Downloaded: MSMScHonsMPhilPhDRules-2020.pdf (607705 bytes)
+2025-10-01 20:53:12,470 - INFO - 
+ Phase 2: Scraping web pages and finding PDFs...
+2025-10-01 20:53:12,470 - INFO -  Scraping: https://su.edu.pk/Rules-and-Regulations
+2025-10-01 20:53:14,546 - INFO -  Scraped: rules_Rules-and-Regulations.txt (113023 chars)
+2025-10-01 20:53:16,064 - INFO -  Found 15 PDF links on https://su.edu.pk/Rules-and-Regulations
+2025-10-01 20:53:18,065 - INFO -  Scraping: https://su.edu.pk/admissions
+2025-10-01 20:53:18,933 - INFO -  Scraped: rules_admissions.txt (3096 chars)
+2025-10-01 20:53:19,759 - INFO -  Found 15 PDF links on https://su.edu.pk/admissions
+2025-10-01 20:53:21,762 - INFO -  Scraping: https://su.edu.pk/academics
+2025-10-01 20:53:22,631 - INFO -  Scraped: rules_academics.txt (3096 chars)
+2025-10-01 20:53:23,538 - INFO -  Found 15 PDF links on https://su.edu.pk/academics
+2025-10-01 20:53:25,541 - INFO - 
+ Phase 3: Downloading 9 discovered PDFs...
+2025-10-01 20:53:25,542 - INFO -  Downloading PDF: https://su.edu.pk/upload/Fee Structure - Fall 2025.pdf
+2025-10-01 20:53:27,445 - INFO -  Downloaded: FeeStructure-Fall2025.pdf (1259448 bytes)
+2025-10-01 20:53:28,446 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/service_statutes_2006.pdf
+2025-10-01 20:53:33,727 - INFO -  Downloaded: service_statutes_2006.pdf (10996605 bytes)
+2025-10-01 20:53:34,728 - INFO -  Downloading PDF: https://su.edu.pk/upload/UOS-Prospectus-2025.pdf
+2025-10-01 20:54:04,828 - INFO -  Downloaded: UOS-Prospectus-2025.pdf (52004109 bytes)
+2025-10-01 20:54:05,830 - INFO -  Downloading PDF: https://su.edu.pk/upload/downloads/Guidelines%20for%20Applicants%20%E2%80%93%20Admission%20Fall%202023%202_1692578994.pdf
+2025-10-01 20:54:07,476 - INFO -  Downloaded: Guidelines20for20Applicants20E2809320Admission20Fall202023202_1692578994.pdf (460274 bytes)
+2025-10-01 20:54:08,480 - INFO -  Downloading PDF: https://su.edu.pk/upload/Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf
+2025-10-01 20:54:10,293 - INFO -  Downloaded: Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf (894491 bytes)
+2025-10-01 20:54:11,294 - INFO -  Downloading PDF: http://www.surveyofpakistan.gov.pk/SiteImage/Misc/files/political_map_pakistan.pdf
+2025-10-01 20:56:10,151 - INFO -  Downloaded: political_map_pakistan.pdf (1021812 bytes)
+2025-10-01 20:56:11,156 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/budget.pdf
+2025-10-01 20:56:13,425 - INFO -  Downloaded: budget.pdf (2388092 bytes)
+2025-10-01 20:56:14,427 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/The_University_of_Sargodha_Ordinance _2002.pdf
+2025-10-01 20:56:15,869 - INFO -  Downloaded: The_University_of_Sargodha_Ordinance_2002.pdf (315962 bytes)
+2025-10-01 20:56:16,876 - INFO -  Downloading PDF: https://su.edu.pk/upload/Policy%20for%20Students%20with%20Disabilities%202021-%20Amended.pdf
+2025-10-01 20:56:18,444 - INFO -  Downloaded: Policy20for20Students20with20Disabilities202021-20Amended.pdf (317322 bytes)
+2025-10-01 20:56:19,447 - INFO - 
+ Phase 4: Manual collection reminder
+2025-10-01 20:56:19,447 - INFO -  Collection completed! Stats: {'pdfs_downloaded': 10, 'pages_scraped': 3, 'pdfs_found': 9}
+2025-10-01 21:08:46,724 - INFO -  Starting University of Sargodha document collection...
+2025-10-01 21:08:46,724 - INFO - 
+ Phase 1: Downloading known PDF documents...
+2025-10-01 21:08:46,724 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/MS MSc Hons MPhil & PhD Rules - 2020.pdf
+2025-10-01 21:08:55,712 - INFO -  Downloaded: MSMScHonsMPhilPhDRules-2020.pdf (607705 bytes)
+2025-10-01 21:08:56,715 - INFO - 
+ Phase 2: Scraping web pages and finding PDFs...
+2025-10-01 21:08:56,715 - INFO -  Scraping: https://su.edu.pk/Rules-and-Regulations
+2025-10-01 21:09:02,390 - INFO -  Scraped: rules_Rules-and-Regulations.txt (113023 chars)
+2025-10-01 21:09:06,957 - INFO -  Found 15 PDF links on https://su.edu.pk/Rules-and-Regulations
+2025-10-01 21:09:08,961 - INFO -  Scraping: https://su.edu.pk/admissions
+2025-10-01 21:09:10,843 - INFO -  Scraped: rules_admissions.txt (3096 chars)
+2025-10-01 21:09:12,964 - INFO -  Found 15 PDF links on https://su.edu.pk/admissions
+2025-10-01 21:09:14,969 - INFO -  Scraping: https://su.edu.pk/academics
+2025-10-01 21:09:16,928 - INFO -  Scraped: rules_academics.txt (3096 chars)
+2025-10-01 21:09:19,881 - INFO -  Found 15 PDF links on https://su.edu.pk/academics
+2025-10-01 21:09:21,889 - INFO - 
+ Phase 3: Downloading 9 discovered PDFs...
+2025-10-01 21:09:21,889 - INFO -  Downloading PDF: https://su.edu.pk/upload/downloads/Guidelines%20for%20Applicants%20%E2%80%93%20Admission%20Fall%202023%202_1692578994.pdf
+2025-10-01 21:09:38,447 - INFO -  Downloaded: Guidelines20for20Applicants20E2809320Admission20Fall202023202_1692578994.pdf (460274 bytes)
+2025-10-01 21:09:39,449 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/The_University_of_Sargodha_Ordinance _2002.pdf
+2025-10-01 21:09:46,911 - INFO -  Downloaded: The_University_of_Sargodha_Ordinance_2002.pdf (315962 bytes)
+2025-10-01 21:09:47,922 - INFO -  Downloading PDF: http://www.surveyofpakistan.gov.pk/SiteImage/Misc/files/political_map_pakistan.pdf
+2025-10-01 21:10:46,702 - INFO -  Downloaded: political_map_pakistan.pdf (1021812 bytes)
+2025-10-01 21:10:47,704 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/budget.pdf
+2025-10-01 21:11:31,055 - INFO -  Downloaded: budget.pdf (2388092 bytes)
+2025-10-01 21:11:32,059 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/service_statutes_2006.pdf
+2025-10-01 21:12:54,701 - ERROR -  Network error downloading https://su.edu.pk/upload/rti/service_statutes_2006.pdf: ('Connection broken: IncompleteRead(1007616 bytes read, 9988989 more expected)', IncompleteRead(1007616 bytes read, 9988989 more expected))
+2025-10-01 21:12:55,729 - INFO -  Downloading PDF: https://su.edu.pk/upload/Policy%20for%20Students%20with%20Disabilities%202021-%20Amended.pdf
+2025-10-01 21:13:01,961 - INFO -  Downloaded: Policy20for20Students20with20Disabilities202021-20Amended.pdf (317322 bytes)
+2025-10-01 21:13:02,966 - INFO -  Downloading PDF: https://su.edu.pk/upload/Fee Structure - Fall 2025.pdf
+2025-10-01 21:13:31,330 - INFO -  Downloaded: FeeStructure-Fall2025.pdf (1259448 bytes)
+2025-10-01 21:13:32,333 - INFO -  Downloading PDF: https://su.edu.pk/upload/UOS-Prospectus-2025.pdf
+2025-10-01 21:15:01,034 - INFO -  Starting University of Sargodha document collection...
+2025-10-01 21:15:01,036 - INFO - 
+ Phase 1: Downloading known PDF documents...
+2025-10-01 21:15:01,038 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/MS MSc Hons MPhil & PhD Rules - 2020.pdf
+2025-10-01 21:15:06,253 - INFO -  Downloaded: MSMScHonsMPhilPhDRules-2020.pdf (607705 bytes)
+2025-10-01 21:15:07,264 - INFO - 
+ Phase 2: Scraping web pages and finding PDFs...
+2025-10-01 21:15:07,264 - INFO -  Scraping: https://su.edu.pk/Rules-and-Regulations
+2025-10-01 21:15:11,322 - INFO -  Scraped: rules_Rules-and-Regulations.txt (113023 chars)
+2025-10-01 21:15:13,473 - INFO -  Found 15 PDF links on https://su.edu.pk/Rules-and-Regulations
+2025-10-01 21:15:15,480 - INFO -  Scraping: https://su.edu.pk/admissions
+2025-10-01 21:15:16,592 - INFO -  Scraped: rules_admissions.txt (3096 chars)
+2025-10-01 21:15:17,641 - INFO -  Found 15 PDF links on https://su.edu.pk/admissions
+2025-10-01 21:15:19,644 - INFO -  Scraping: https://su.edu.pk/academics
+2025-10-01 21:15:21,113 - INFO -  Scraped: rules_academics.txt (3096 chars)
+2025-10-01 21:15:22,145 - INFO -  Found 15 PDF links on https://su.edu.pk/academics
+2025-10-01 21:15:24,148 - INFO - 
+ Phase 3: Downloading 9 discovered PDFs...
+2025-10-01 21:15:24,148 - INFO -  Downloading PDF: https://su.edu.pk/upload/downloads/Guidelines%20for%20Applicants%20%E2%80%93%20Admission%20Fall%202023%202_1692578994.pdf
+2025-10-01 21:15:26,830 - INFO -  Downloaded: Guidelines20for20Applicants20E2809320Admission20Fall202023202_1692578994.pdf (460274 bytes)
+2025-10-01 21:15:27,834 - INFO -  Downloading PDF: https://su.edu.pk/upload/Fee Structure - Fall 2025.pdf
+2025-10-01 21:15:30,901 - INFO -  Downloaded: FeeStructure-Fall2025.pdf (1259448 bytes)
+2025-10-01 21:15:31,902 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/service_statutes_2006.pdf
+2025-10-01 21:15:38,212 - INFO -  Downloaded: service_statutes_2006.pdf (10996605 bytes)
+2025-10-01 21:15:39,214 - INFO -  Downloading PDF: https://su.edu.pk/upload/UOS-Prospectus-2025.pdf
+2025-10-01 21:15:58,843 - INFO -  Downloaded: UOS-Prospectus-2025.pdf (52004109 bytes)
+2025-10-01 21:15:59,844 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/The_University_of_Sargodha_Ordinance _2002.pdf
+2025-10-01 21:16:02,064 - INFO -  Downloaded: The_University_of_Sargodha_Ordinance_2002.pdf (315962 bytes)
+2025-10-01 21:16:03,064 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/budget.pdf
+2025-10-01 21:16:06,547 - INFO -  Downloaded: budget.pdf (2388092 bytes)
+2025-10-01 21:16:07,549 - INFO -  Downloading PDF: https://su.edu.pk/upload/Policy%20for%20Students%20with%20Disabilities%202021-%20Amended.pdf
+2025-10-01 21:16:09,784 - INFO -  Downloaded: Policy20for20Students20with20Disabilities202021-20Amended.pdf (317322 bytes)
+2025-10-01 21:16:10,786 - INFO -  Downloading PDF: http://www.surveyofpakistan.gov.pk/SiteImage/Misc/files/political_map_pakistan.pdf
+2025-10-01 21:16:54,230 - INFO -  Downloaded: political_map_pakistan.pdf (1021812 bytes)
+2025-10-01 21:16:55,234 - INFO -  Downloading PDF: https://su.edu.pk/upload/Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf
+2025-10-01 21:16:57,990 - INFO -  Downloaded: Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf (894491 bytes)
+2025-10-01 21:16:58,996 - INFO - 
+ Phase 4: Manual collection reminder
+2025-10-01 21:16:58,996 - INFO -  Collection completed! Stats: {'pdfs_downloaded': 10, 'pages_scraped': 3, 'pdfs_found': 9}
+2025-10-01 21:56:42,688 - INFO -  Starting University of Sargodha document collection...
+2025-10-01 21:56:42,688 - INFO - 
+ Phase 1: Downloading known PDF documents...
+2025-10-01 21:56:42,688 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/MS MSc Hons MPhil & PhD Rules - 2020.pdf
+2025-10-01 21:56:55,957 - INFO -  Downloaded: MSMScHonsMPhilPhDRules-2020.pdf (607705 bytes)
+2025-10-01 21:56:56,958 - INFO - 
+ Phase 2: Scraping web pages and finding PDFs...
+2025-10-01 21:56:56,958 - INFO -  Scraping: https://su.edu.pk/Rules-and-Regulations
+2025-10-01 21:57:08,768 - INFO -  Scraped: rules_Rules-and-Regulations.txt (113023 chars)
+2025-10-01 21:57:20,368 - INFO -  Found 15 PDF links on https://su.edu.pk/Rules-and-Regulations
+2025-10-01 21:57:22,369 - INFO -  Scraping: https://su.edu.pk/admissions
+2025-10-01 21:57:23,860 - INFO -  Scraped: rules_admissions.txt (3096 chars)
+2025-10-01 21:57:26,231 - INFO -  Found 15 PDF links on https://su.edu.pk/admissions
+2025-10-01 21:57:28,232 - INFO -  Scraping: https://su.edu.pk/academics
+2025-10-01 21:57:29,637 - INFO -  Scraped: rules_academics.txt (3096 chars)
+2025-10-01 21:57:31,390 - INFO -  Found 15 PDF links on https://su.edu.pk/academics
+2025-10-01 21:57:33,391 - INFO - 
+ Phase 3: Downloading 9 discovered PDFs...
+2025-10-01 21:57:33,391 - INFO -  Downloading PDF: http://www.surveyofpakistan.gov.pk/SiteImage/Misc/files/political_map_pakistan.pdf
+2025-10-01 21:57:57,614 - INFO -  Downloaded: political_map_pakistan.pdf (1021812 bytes)
+2025-10-01 21:57:58,615 - INFO -  Downloading PDF: https://su.edu.pk/upload/Policy%20for%20Students%20with%20Disabilities%202021-%20Amended.pdf
+2025-10-01 21:58:03,536 - INFO -  Downloaded: Policy20for20Students20with20Disabilities202021-20Amended.pdf (317322 bytes)
+2025-10-01 21:58:04,539 - INFO -  Downloading PDF: https://su.edu.pk/upload/Fee Structure - Fall 2025.pdf
+2025-10-01 21:58:17,065 - INFO -  Downloaded: FeeStructure-Fall2025.pdf (1259448 bytes)
+2025-10-01 21:58:18,066 - INFO -  Downloading PDF: https://su.edu.pk/upload/Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf
+2025-10-01 21:58:28,326 - INFO -  Downloaded: Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf (894491 bytes)
+2025-10-01 21:58:29,327 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/The_University_of_Sargodha_Ordinance _2002.pdf
+2025-10-01 21:58:33,793 - INFO -  Downloaded: The_University_of_Sargodha_Ordinance_2002.pdf (315962 bytes)
+2025-10-01 21:58:34,793 - INFO -  Downloading PDF: https://su.edu.pk/upload/downloads/Guidelines%20for%20Applicants%20%E2%80%93%20Admission%20Fall%202023%202_1692578994.pdf
+2025-10-01 21:58:40,976 - INFO -  Downloaded: Guidelines20for20Applicants20E2809320Admission20Fall202023202_1692578994.pdf (460274 bytes)
+2025-10-01 21:58:41,977 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/budget.pdf
+2025-10-01 21:59:06,509 - INFO -  Downloaded: budget.pdf (2388092 bytes)
+2025-10-01 21:59:07,510 - INFO -  Downloading PDF: https://su.edu.pk/upload/rti/service_statutes_2006.pdf
+2025-10-01 22:00:48,516 - ERROR -  Network error downloading https://su.edu.pk/upload/rti/service_statutes_2006.pdf: ('Connection broken: IncompleteRead(8290880 bytes read, 2705725 more expected)', IncompleteRead(8290880 bytes read, 2705725 more expected))
+2025-10-01 22:00:49,518 - INFO -  Downloading PDF: https://su.edu.pk/upload/UOS-Prospectus-2025.pdf
+2025-10-01 22:01:09,751 - ERROR -  Network error downloading https://su.edu.pk/upload/UOS-Prospectus-2025.pdf: ('Connection broken: IncompleteRead(4283776 bytes read, 47720333 more expected)', IncompleteRead(4283776 bytes read, 47720333 more expected))
+2025-10-01 22:01:10,757 - INFO - 
+ Phase 4: Manual collection reminder
+2025-10-01 22:01:10,757 - INFO -  Collection completed! Stats: {'pdfs_downloaded': 8, 'pages_scraped': 3, 'pdfs_found': 9}

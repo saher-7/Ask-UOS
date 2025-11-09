@@ -1,0 +1,97 @@
+{
+  "processing_date": "2025-10-01T22:01:30.919814",
+  "statistics": {
+    "total_files": 13,
+    "processed_files": 10,
+    "failed_files": 3,
+    "total_characters": 407558,
+    "processing_errors": [
+      "budget.pdf: Unknown error",
+      "service_statutes_2006.pdf: Unknown error",
+      "UOS-Prospectus-2025.pdf: Error reading PDF data\\pdfs\\UOS-Prospectus-2025.pdf: EOF marker not found"
+    ]
+  },
+  "documents_metadata": {
+    "PDF_Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf": {
+      "source": "data\\pdfs\\Academic-Programs-Eligibilities-and-Terminal-Degrees.pdf",
+      "type": "PDF",
+      "pages_processed": 46,
+      "pages_failed": 0,
+      "extraction_method": "PyPDF2",
+      "total_pages": 46,
+      "character_count": 92480
+    },
+    "PDF_FeeStructure-Fall2025.pdf": {
+      "source": "data\\pdfs\\FeeStructure-Fall2025.pdf",
+      "type": "PDF",
+      "pages_processed": 8,
+      "pages_failed": 0,
+      "extraction_method": "PyPDF2",
+      "total_pages": 8,
+      "character_count": 30962
+    },
+    "PDF_Guidelines20for20Applicants20E2809320Admission20Fall202023202_1692578994.pdf": {
+      "source": "data\\pdfs\\Guidelines20for20Applicants20E2809320Admission20Fall202023202_1692578994.pdf",
+      "type": "PDF",
+      "pages_processed": 3,
+      "pages_failed": 0,
+      "extraction_method": "PyPDF2",
+      "total_pages": 3,
+      "character_count": 3203
+    },
+    "PDF_MSMScHonsMPhilPhDRules-2020.pdf": {
+      "source": "data\\pdfs\\MSMScHonsMPhilPhDRules-2020.pdf",
+      "type": "PDF",
+      "pages_processed": 20,
+      "pages_failed": 0,
+      "extraction_method": "PyPDF2",
+      "total_pages": 20,
+      "character_count": 52524
+    },
+    "PDF_Policy20for20Students20with20Disabilities202021-20Amended.pdf": {
+      "source": "data\\pdfs\\Policy20for20Students20with20Disabilities202021-20Amended.pdf",
+      "type": "PDF",
+      "pages_processed": 15,
+      "pages_failed": 0,
+      "extraction_method": "PyPDF2",
+      "total_pages": 15,
+      "character_count": 32450
+    },
+    "PDF_political_map_pakistan.pdf": {
+      "source": "data\\pdfs\\political_map_pakistan.pdf",
+      "type": "PDF",
+      "pages_processed": 1,
+      "pages_failed": 0,
+      "extraction_method": "PyPDF2",
+      "total_pages": 1,
+      "character_count": 2667
+    },
+    "PDF_The_University_of_Sargodha_Ordinance_2002.pdf": {
+      "source": "data\\pdfs\\The_University_of_Sargodha_Ordinance_2002.pdf",
+      "type": "PDF",
+      "pages_processed": 20,
+      "pages_failed": 0,
+      "extraction_method": "PyPDF2",
+      "total_pages": 20,
+      "character_count": 74057
+    },
+    "WEB_rules_academics.txt": {
+      "source": "data\\web_content\\rules_academics.txt",
+      "type": "TXT",
+      "encoding_used": "utf-8",
+      "character_count": 3235
+    },
+    "WEB_rules_admissions.txt": {
+      "source": "data\\web_content\\rules_admissions.txt",
+      "type": "TXT",
+      "encoding_used": "utf-8",
+      "character_count": 3236
+    },
+    "WEB_rules_Rules-and-Regulations.txt": {
+      "source": "data\\web_content\\rules_Rules-and-Regulations.txt",
+      "type": "TXT",
+      "encoding_used": "utf-8",
+      "character_count": 113174
+    }
+  }
+}
