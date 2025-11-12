@@ -396,6 +396,31 @@ Please provide a comprehensive answer based on the information above. If the inf
         context_str = "\n".join(context_parts)
         
         enhanced_query = f"""Previous conversation context:
+
+    def query(self, query: str, include_sources: bool = True) -> RAGResponse:
+        """Alias for process_query to maintain compatibility with interfaces"""
+        return self.process_query(query, include_sources)
+
+    def get_pipeline_stats(self) -> Dict[str, Any]:
+        """Get pipeline statistics - alias for get_statistics"""
+        stats = self.get_statistics()
+
+        # Flatten structure for easier access
+        return {
+            'queries': {
+                'total_queries': stats['pipeline_stats']['total_queries'],
+                'successful_responses': stats['pipeline_stats']['successful_responses'],
+                'success_rate': float(str(stats['pipeline_stats']['success_rate']).rstrip('%'))
+            },
+            'performance': {
+                'average_response_time': float(str(stats['pipeline_stats']['average_response_time']).rstrip('s')),
+                'total_tokens_used': stats['pipeline_stats']['total_tokens_used'],
+                'average_tokens_per_query': stats['pipeline_stats']['total_tokens_used'] // max(1, stats['pipeline_stats']['total_queries'])
+            },
+            'configuration': stats['configuration'],
+            'vector_store': stats.get('vector_store_stats', {})
+        }
+    
 {context_str}
 
 Current question: {query}"""

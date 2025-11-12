@@ -21,42 +21,18 @@ class EmbeddingService:
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
         self.model_name = model_name or os.getenv("EMBEDDING_MODEL", "text-embedding-ada-002")
         self.llm_model = os.getenv("LLM_MODEL", "gpt-3.5-turbo")
+        
         # Set embedding dimension based on model
         if self.model_name == "text-embedding-ada-002":
             self.embedding_dim = 1536
         else:
             self.embedding_dim = 384  # default for MiniLM etc.
 
-        # Always use OpenAI for embeddings (never set base_url)
+        # Always use OpenAI for embeddings
         if self.openai_api_key:
             openai.api_key = self.openai_api_key
-            if hasattr(openai, 'base_url'):
-                try:
-                    del openai.base_url
-                except Exception:
-                    pass
         else:
             raise ValueError("OpenAI API key not found. Please set OPENAI_API_KEY in .env file for embeddings.")
-
-    @staticmethod
-    def groq_chat_completion(messages, model=None, groq_api_key=None):
-        """Call Groq API for chat completions (LLM) only. Use this in your LLM logic, not for embeddings."""
-        import requests
-        import os
-        groq_api_key = groq_api_key or os.getenv("GROQ_API_KEY")
-        model = model or os.getenv("LLM_MODEL", "llama-3-70b-8192")
-        url = "https://api.groq.com/openai/v1/chat/completions"
-        headers = {
-            "Authorization": f"Bearer {groq_api_key}",
-            "Content-Type": "application/json"
-        }
-        data = {
-            "model": model,
-            "messages": messages
-        }
-        response = requests.post(url, headers=headers, json=data)
-        response.raise_for_status()
-        return response.json()
         
         # Setup caching
         self.cache_dir = "models/embedding_cache"
@@ -87,6 +63,25 @@ class EmbeddingService:
             'total_tokens_processed': 0,
             'total_cost_estimate': 0.0
         }
+
+    @staticmethod
+    def groq_chat_completion(messages, model=None, groq_api_key=None):
+        """Call Groq API for chat completions (LLM) only. Use this in your LLM logic, not for embeddings."""
+        import requests
+        groq_api_key = groq_api_key or os.getenv("GROQ_API_KEY")
+        model = model or os.getenv("LLM_MODEL", "llama-3.1-70b-versatile")
+        url = "https://api.groq.com/openai/v1/chat/completions"
+        headers = {
+            "Authorization": f"Bearer {groq_api_key}",
+            "Content-Type": "application/json"
+        }
+        data = {
+            "model": model,
+            "messages": messages
+        }
+        response = requests.post(url, headers=headers, json=data)
+        response.raise_for_status()
+        return response.json()
     
     def _load_cache(self) -> Dict[str, List[float]]:
         """Load embedding cache from disk"""
@@ -138,18 +133,23 @@ class EmbeddingService:
                 model=self.model_name
             )
             embedding = response.data[0].embedding
+            
             # Update statistics
             self.stats['api_calls'] += 1
-            self.stats['total_tokens_processed'] += len(text.split())  # Rough estimate
-            self.stats['total_cost_estimate'] += len(text) * 0.0001 / 1000  # Rough cost estimate
+            self.stats['total_tokens_processed'] += len(text.split())
+            self.stats['total_cost_estimate'] += len(text) * 0.0001 / 1000
+            
             # Cache the result
             self.cache[cache_key] = embedding
+            
             # Save cache periodically
             if self.stats['api_calls'] % 10 == 0:
                 self._save_cache()
+            
             return embedding
+            
         except Exception as e:
-            self.logger.error(f" Error creating embedding: {e}")
+            self.logger.error(f"Error creating embedding: {e}")
             return []
     
     def create_embeddings_batch(self, texts: List[str], batch_size: int = 100, 
@@ -158,11 +158,10 @@ class EmbeddingService:
         if not texts:
             return []
         
-        self.logger.info(f" Creating embeddings for {len(texts)} texts in {total_batches} batches...")
+        total_batches = (len(texts) - 1) // batch_size + 1
+        self.logger.info(f"Creating embeddings for {len(texts)} texts in {total_batches} batches...")
         
         embeddings = []
-        total_batches = (len(texts) - 1) // batch_size + 1
-        
         
         for batch_idx in range(0, len(texts), batch_size):
             batch_texts = texts[batch_idx:batch_idx + batch_size]
@@ -190,20 +189,24 @@ class EmbeddingService:
                         input=uncached_texts,
                         model=self.model_name
                     )
+                    
                     # Fill in the uncached embeddings
                     for i, embedding_data in enumerate(response.data):
                         original_idx = uncached_indices[i]
                         embedding = embedding_data.embedding
                         batch_embeddings[original_idx] = embedding
+                        
                         # Cache the result
                         cache_key = self._get_cache_key(uncached_texts[i])
                         self.cache[cache_key] = embedding
+                    
                     # Update statistics
                     self.stats['api_calls'] += 1
                     self.stats['total_tokens_processed'] += sum(len(text.split()) for text in uncached_texts)
                     self.stats['total_cost_estimate'] += sum(len(text) for text in uncached_texts) * 0.0001 / 1000
+                    
                 except Exception as e:
-                    self.logger.error(f" Error in batch {batch_idx//batch_size + 1}: {e}")
+                    self.logger.error(f"Error in batch {batch_idx//batch_size + 1}: {e}")
                     # Fill failed embeddings with zeros
                     for i in uncached_indices:
                         if batch_embeddings[i] is None:
@@ -215,7 +218,7 @@ class EmbeddingService:
             if show_progress:
                 batch_num = batch_idx // batch_size + 1
                 progress = (batch_num / total_batches) * 100
-                print(f"\r Progress: {progress:.1f}% ({batch_num}/{total_batches} batches)", end="")
+                print(f"\rProgress: {progress:.1f}% ({batch_num}/{total_batches} batches)", end="")
         
         if show_progress:
             print()  # New line after progress
@@ -232,13 +235,13 @@ class EmbeddingService:
         try:
             test_embedding = self.create_embedding("test connection")
             if test_embedding and len(test_embedding) == self.embedding_dim:
-                self.logger.info(" OpenAI API connection successful")
+                self.logger.info("OpenAI API connection successful")
                 return True
             else:
-                self.logger.error(" OpenAI API returned invalid embedding")
+                self.logger.error("OpenAI API returned invalid embedding")
                 return False
         except Exception as e:
-            self.logger.error(f" OpenAI API connection error: {e}")
+            self.logger.error(f"OpenAI API connection error: {e}")
             return False
     
     def get_stats(self) -> Dict:
@@ -263,7 +266,6 @@ class LocalEmbeddingService:
     def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
         self.model_name = model_name
         
-        # Configure logging
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s',
@@ -274,14 +276,14 @@ class LocalEmbeddingService:
         )
         self.logger = logging.getLogger(__name__)
         
-        self.logger.info(f" Loading local embedding model: {model_name}")
+        self.logger.info(f"Loading local embedding model: {model_name}")
         
         try:
             self.model = SentenceTransformer(model_name)
             self.embedding_dim = self.model.get_sentence_embedding_dimension()
-            self.logger.info(f" Model loaded successfully (dimension: {self.embedding_dim})")
+            self.logger.info(f"Model loaded successfully (dimension: {self.embedding_dim})")
         except Exception as e:
-            self.logger.error(f" Failed to load model: {e}")
+            self.logger.error(f"Failed to load model: {e}")
             raise
         
         # Setup caching
@@ -299,7 +301,6 @@ class LocalEmbeddingService:
         }
     
     def _load_cache(self) -> Dict[str, List[float]]:
-        """Load embedding cache from disk"""
         if os.path.exists(self.cache_file):
             try:
                 with open(self.cache_file, 'r') as f:
@@ -309,7 +310,6 @@ class LocalEmbeddingService:
         return {}
     
     def _save_cache(self):
-        """Save embedding cache to disk"""
         try:
             with open(self.cache_file, 'w') as f:
                 json.dump(self.cache, f)
@@ -317,14 +317,11 @@ class LocalEmbeddingService:
             self.logger.warning(f"Could not save cache: {e}")
     
     def _get_cache_key(self, text: str) -> str:
-        """Generate cache key for text"""
         return hashlib.md5((text + self.model_name).encode('utf-8')).hexdigest()
     
     def create_embedding(self, text: str) -> List[float]:
-        """Create embedding for a single text using local model"""
         self.stats['total_requests'] += 1
         
-        # Check cache first
         cache_key = self._get_cache_key(text)
         if cache_key in self.cache:
             self.stats['cache_hits'] += 1
@@ -335,34 +332,28 @@ class LocalEmbeddingService:
             embedding = self.model.encode(text)
             processing_time = time.time() - start_time
             
-            # Convert to list for JSON serialization
             embedding_list = embedding.tolist()
             
-            # Update statistics
             self.stats['model_calls'] += 1
             self.stats['processing_time'] += processing_time
             
-            # Cache the result
             self.cache[cache_key] = embedding_list
             
-            # Save cache periodically
             if self.stats['model_calls'] % 50 == 0:
                 self._save_cache()
             
             return embedding_list
             
         except Exception as e:
-            self.logger.error(f" Error creating embedding: {e}")
+            self.logger.error(f"Error creating embedding: {e}")
             return []
     
     def create_embeddings_batch(self, texts: List[str], show_progress: bool = True) -> List[List[float]]:
-        """Create embeddings for multiple texts"""
         if not texts:
             return []
         
-        self.logger.info(f" Creating embeddings for {len(texts)} texts (local model)...")
+        self.logger.info(f"Creating embeddings for {len(texts)} texts (local model)...")
         
-        # Check cache for all texts
         embeddings = []
         uncached_texts = []
         uncached_indices = []
@@ -375,65 +366,56 @@ class LocalEmbeddingService:
             else:
                 uncached_texts.append(text)
                 uncached_indices.append(i)
-                embeddings.append(None)  # Placeholder
+                embeddings.append(None)
         
-        # Process uncached texts
         if uncached_texts:
             try:
                 start_time = time.time()
                 
                 if show_progress:
-                    print(f" Processing {len(uncached_texts)} new texts with local model...")
+                    print(f"Processing {len(uncached_texts)} new texts with local model...")
                 
                 uncached_embeddings = self.model.encode(uncached_texts, show_progress_bar=show_progress)
                 processing_time = time.time() - start_time
                 
-                # Fill in the uncached embeddings and cache them
                 for i, embedding in enumerate(uncached_embeddings):
                     original_idx = uncached_indices[i]
                     embedding_list = embedding.tolist()
                     embeddings[original_idx] = embedding_list
                     
-                    # Cache the result
                     cache_key = self._get_cache_key(uncached_texts[i])
                     self.cache[cache_key] = embedding_list
                 
-                # Update statistics
                 self.stats['model_calls'] += 1
                 self.stats['processing_time'] += processing_time
                 
-                self.logger.info(f" Processed {len(uncached_texts)} texts in {processing_time:.2f}s")
+                self.logger.info(f"Processed {len(uncached_texts)} texts in {processing_time:.2f}s")
                 
             except Exception as e:
-                self.logger.error(f" Error in batch processing: {e}")
-                # Fill failed embeddings with zeros
+                self.logger.error(f"Error in batch processing: {e}")
                 for i in uncached_indices:
                     if embeddings[i] is None:
                         embeddings[i] = [0.0] * self.embedding_dim
         
-        # Save cache
         self._save_cache()
         
         self.logger.info(f"Created {len(embeddings)} embeddings")
-        self.logger.info(f"Cache hits: {self.stats['cache_hits']}, Model calls: {self.stats['model_calls']}")
         return embeddings
     
     def test_connection(self) -> bool:
-        """Test local model"""
         try:
             test_embedding = self.create_embedding("test connection")
             if test_embedding and len(test_embedding) == self.embedding_dim:
-                self.logger.info(" Local embedding model working correctly")
+                self.logger.info("Local embedding model working correctly")
                 return True
             else:
-                self.logger.error(" Local model returned invalid embedding")
+                self.logger.error("Local model returned invalid embedding")
                 return False
         except Exception as e:
-            self.logger.error(f" Local embedding model error: {e}")
+            self.logger.error(f"Local embedding model error: {e}")
             return False
     
     def get_stats(self) -> Dict:
-        """Get embedding service statistics"""
         cache_hit_rate = (self.stats['cache_hits'] / max(1, self.stats['total_requests'])) * 100
         avg_processing_time = self.stats['processing_time'] / max(1, self.stats['model_calls'])
         
@@ -452,7 +434,6 @@ class LocalEmbeddingService:
 def get_embedding_service(use_openai: bool = None) -> Tuple[object, str]:
     """Factory function to get appropriate embedding service"""
     
-    # Auto-detect if not specified
     if use_openai is None:
         openai_key = os.getenv("OPENAI_API_KEY")
         use_openai = bool(openai_key)
@@ -463,10 +444,10 @@ def get_embedding_service(use_openai: bool = None) -> Tuple[object, str]:
             if service.test_connection():
                 return service, "openai"
             else:
-                print(" OpenAI service failed, falling back to local embeddings")
+                print("OpenAI service failed, falling back to local embeddings")
                 use_openai = False
         except Exception as e:
-            print(f" OpenAI service error: {e}, falling back to local embeddings")
+            print(f"OpenAI service error: {e}, falling back to local embeddings")
             use_openai = False
     
     if not use_openai:
