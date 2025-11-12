@@ -52,3 +52,241 @@
 2025-10-01 22:03:00,277 - INFO - Use pytorch device_name: cpu
 2025-10-01 22:03:00,278 - INFO -  Model loaded successfully (dimension: 384)
 2025-10-01 22:03:00,429 - INFO -  Local embedding model working correctly
+2025-11-12 14:50:06,213 - INFO - Loading local embedding model: all-MiniLM-L6-v2
+2025-11-12 14:50:06,217 - INFO - Use pytorch device_name: cpu
+2025-11-12 14:50:06,218 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-12 14:50:10,781 - INFO - Model loaded successfully (dimension: 384)
+2025-11-12 14:55:30,148 - INFO - Loading local embedding model: all-MiniLM-L6-v2
+2025-11-12 14:55:30,151 - INFO - Use pytorch device_name: cpu
+2025-11-12 14:55:30,152 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-12 14:55:34,461 - INFO - Model loaded successfully (dimension: 384)
+2025-11-12 14:55:34,646 - WARNING - python-dotenv could not parse statement starting at line 3
+2025-11-12 14:55:34,646 - WARNING - python-dotenv could not parse statement starting at line 5
+2025-11-12 14:55:34,646 - WARNING - python-dotenv could not parse statement starting at line 7
+2025-11-12 14:55:34,646 - WARNING - python-dotenv could not parse statement starting at line 8
+2025-11-12 14:55:34,646 - WARNING - python-dotenv could not parse statement starting at line 10
+2025-11-12 14:55:34,646 - WARNING - python-dotenv could not parse statement starting at line 11
+2025-11-12 14:55:34,647 - WARNING - python-dotenv could not parse statement starting at line 14
+2025-11-12 14:55:34,647 - WARNING - python-dotenv could not parse statement starting at line 15
+2025-11-12 14:55:34,647 - WARNING - python-dotenv could not parse statement starting at line 16
+2025-11-12 14:55:34,647 - WARNING - python-dotenv could not parse statement starting at line 17
+2025-11-12 14:55:34,647 - WARNING - python-dotenv could not parse statement starting at line 18
+2025-11-12 14:55:34,647 - WARNING - python-dotenv could not parse statement starting at line 21
+2025-11-12 14:55:34,648 - WARNING - python-dotenv could not parse statement starting at line 22
+2025-11-12 14:55:34,648 - WARNING - python-dotenv could not parse statement starting at line 23
+2025-11-12 14:55:34,648 - WARNING - python-dotenv could not parse statement starting at line 24
+2025-11-12 14:55:34,648 - WARNING - python-dotenv could not parse statement starting at line 25
+2025-11-12 14:55:34,648 - WARNING - python-dotenv could not parse statement starting at line 28
+2025-11-12 14:55:34,649 - WARNING - python-dotenv could not parse statement starting at line 29
+2025-11-12 14:55:34,649 - WARNING - python-dotenv could not parse statement starting at line 30
+2025-11-12 14:55:34,649 - WARNING - python-dotenv could not parse statement starting at line 31
+2025-11-12 14:55:34,649 - WARNING - python-dotenv could not parse statement starting at line 32
+2025-11-12 14:55:34,649 - WARNING - python-dotenv could not parse statement starting at line 35
+2025-11-12 14:55:34,649 - WARNING - python-dotenv could not parse statement starting at line 36
+2025-11-12 14:55:34,649 - WARNING - python-dotenv could not parse statement starting at line 37
+2025-11-12 14:55:34,649 - WARNING - python-dotenv could not parse statement starting at line 38
+2025-11-12 14:55:34,649 - WARNING - python-dotenv could not parse statement starting at line 39
+2025-11-12 14:55:34,650 - WARNING - python-dotenv could not parse statement starting at line 42
+2025-11-12 14:55:34,650 - WARNING - python-dotenv could not parse statement starting at line 43
+2025-11-12 14:55:34,650 - WARNING - python-dotenv could not parse statement starting at line 45
+2025-11-12 14:55:34,650 - WARNING - python-dotenv could not parse statement starting at line 46
+2025-11-12 14:55:34,650 - WARNING - python-dotenv could not parse statement starting at line 50
+2025-11-12 14:55:34,650 - WARNING - python-dotenv could not parse statement starting at line 51
+2025-11-12 14:55:34,650 - WARNING - python-dotenv could not parse statement starting at line 54
+2025-11-12 14:55:34,651 - WARNING - python-dotenv could not parse statement starting at line 58
+2025-11-12 14:55:34,651 - WARNING - python-dotenv could not parse statement starting at line 60
+2025-11-12 14:55:34,651 - WARNING - python-dotenv could not parse statement starting at line 61
+2025-11-12 14:55:34,651 - WARNING - python-dotenv could not parse statement starting at line 63
+2025-11-12 14:55:34,651 - WARNING - python-dotenv could not parse statement starting at line 64
+2025-11-12 14:55:34,651 - WARNING - python-dotenv could not parse statement starting at line 65
+2025-11-12 14:55:34,651 - WARNING - python-dotenv could not parse statement starting at line 67
+2025-11-12 14:55:34,651 - WARNING - python-dotenv could not parse statement starting at line 68
+2025-11-12 14:55:34,652 - WARNING - python-dotenv could not parse statement starting at line 69
+2025-11-12 14:55:34,652 - WARNING - python-dotenv could not parse statement starting at line 71
+2025-11-12 14:55:34,652 - WARNING - python-dotenv could not parse statement starting at line 72
+2025-11-12 14:55:34,652 - WARNING - python-dotenv could not parse statement starting at line 75
+2025-11-12 14:55:34,652 - WARNING - python-dotenv could not parse statement starting at line 77
+2025-11-12 14:55:34,652 - WARNING - python-dotenv could not parse statement starting at line 78
+2025-11-12 14:55:34,652 - WARNING - python-dotenv could not parse statement starting at line 79
+2025-11-12 14:55:34,652 - WARNING - python-dotenv could not parse statement starting at line 82
+2025-11-12 14:55:34,653 - WARNING - python-dotenv could not parse statement starting at line 83
+2025-11-12 14:55:34,653 - WARNING - python-dotenv could not parse statement starting at line 84
+2025-11-12 14:55:34,653 - WARNING - python-dotenv could not parse statement starting at line 85
+2025-11-12 14:55:34,653 - WARNING - python-dotenv could not parse statement starting at line 86
+2025-11-12 14:55:34,653 - WARNING - python-dotenv could not parse statement starting at line 88
+2025-11-12 14:55:34,653 - WARNING - python-dotenv could not parse statement starting at line 89
+2025-11-12 14:55:34,654 - WARNING - python-dotenv could not parse statement starting at line 91
+2025-11-12 14:55:34,654 - WARNING - python-dotenv could not parse statement starting at line 92
+2025-11-12 14:55:34,654 - WARNING - python-dotenv could not parse statement starting at line 96
+2025-11-12 14:55:34,654 - WARNING - python-dotenv could not parse statement starting at line 97
+2025-11-12 14:55:34,654 - WARNING - python-dotenv could not parse statement starting at line 98
+2025-11-12 14:55:34,654 - WARNING - python-dotenv could not parse statement starting at line 102
+2025-11-12 14:55:34,654 - WARNING - python-dotenv could not parse statement starting at line 104
+2025-11-12 14:55:34,654 - WARNING - python-dotenv could not parse statement starting at line 105
+2025-11-12 14:55:34,655 - WARNING - python-dotenv could not parse statement starting at line 106
+2025-11-12 14:55:34,655 - WARNING - python-dotenv could not parse statement starting at line 107
+2025-11-12 14:55:34,655 - WARNING - python-dotenv could not parse statement starting at line 109
+2025-11-12 14:55:34,655 - WARNING - python-dotenv could not parse statement starting at line 115
+2025-11-12 14:55:34,655 - WARNING - python-dotenv could not parse statement starting at line 118
+2025-11-12 14:55:34,655 - WARNING - python-dotenv could not parse statement starting at line 120
+2025-11-12 14:55:34,655 - WARNING - python-dotenv could not parse statement starting at line 121
+2025-11-12 14:55:34,656 - WARNING - python-dotenv could not parse statement starting at line 122
+2025-11-12 14:55:34,656 - WARNING - python-dotenv could not parse statement starting at line 124
+2025-11-12 14:55:34,656 - WARNING - python-dotenv could not parse statement starting at line 125
+2025-11-12 14:55:34,656 - WARNING - python-dotenv could not parse statement starting at line 126
+2025-11-12 14:55:34,656 - WARNING - python-dotenv could not parse statement starting at line 128
+2025-11-12 14:55:34,656 - WARNING - python-dotenv could not parse statement starting at line 129
+2025-11-12 14:55:34,656 - WARNING - python-dotenv could not parse statement starting at line 131
+2025-11-12 14:55:34,656 - WARNING - python-dotenv could not parse statement starting at line 132
+2025-11-12 14:55:34,657 - WARNING - python-dotenv could not parse statement starting at line 134
+2025-11-12 14:55:34,657 - WARNING - python-dotenv could not parse statement starting at line 136
+2025-11-12 14:55:34,657 - WARNING - python-dotenv could not parse statement starting at line 145
+2025-11-12 14:55:34,657 - WARNING - python-dotenv could not parse statement starting at line 146
+2025-11-12 14:55:34,657 - WARNING - python-dotenv could not parse statement starting at line 150
+2025-11-12 14:55:34,657 - WARNING - python-dotenv could not parse statement starting at line 151
+2025-11-12 14:55:34,658 - WARNING - python-dotenv could not parse statement starting at line 155
+2025-11-12 14:55:34,658 - WARNING - python-dotenv could not parse statement starting at line 156
+2025-11-12 14:55:34,658 - WARNING - python-dotenv could not parse statement starting at line 160
+2025-11-12 14:55:34,658 - WARNING - python-dotenv could not parse statement starting at line 161
+2025-11-12 14:55:34,658 - WARNING - python-dotenv could not parse statement starting at line 162
+2025-11-12 14:55:34,658 - WARNING - python-dotenv could not parse statement starting at line 166
+2025-11-12 14:55:34,659 - WARNING - python-dotenv could not parse statement starting at line 167
+2025-11-12 14:55:34,659 - WARNING - python-dotenv could not parse statement starting at line 169
+2025-11-12 14:55:34,659 - WARNING - python-dotenv could not parse statement starting at line 170
+2025-11-12 14:55:34,659 - WARNING - python-dotenv could not parse statement starting at line 172
+2025-11-12 14:55:34,853 - INFO - Loading local embedding model: all-MiniLM-L6-v2
+2025-11-12 14:55:34,856 - INFO - Use pytorch device_name: cpu
+2025-11-12 14:55:34,856 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-12 14:55:38,606 - INFO - Model loaded successfully (dimension: 384)
+2025-11-12 14:55:38,732 - INFO - Local embedding model working correctly
+2025-11-12 14:55:38,733 - INFO -  University RAG Pipeline initialized
+2025-11-12 14:55:38,734 - INFO -  Using local embedding service
+2025-11-12 14:55:38,734 - INFO -  LLM available: False
+2025-11-12 14:55:38,734 - INFO -  Processing query: 'What are the admission requirements?'
+2025-11-12 14:55:38,735 - INFO -  Retrieving relevant chunks for: 'What are the admission requirements?...'
+2025-11-12 14:55:38,763 - INFO -  Trying category-specific search: admission
+2025-11-12 14:55:38,764 - INFO -  Found 10 category-specific results
+2025-11-12 14:55:38,765 - INFO -  Retrieved 10 relevant chunks
+2025-11-12 14:55:38,765 - INFO -  Prepared context with 6 chunks (~2949 tokens)
+2025-11-12 14:55:38,765 - INFO -  Query processed in 0.03s
+2025-11-12 14:59:06,714 - INFO - Loading local embedding model: all-MiniLM-L6-v2
+2025-11-12 14:59:06,718 - INFO - Use pytorch device_name: cpu
+2025-11-12 14:59:06,718 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-12 14:59:11,057 - INFO - Model loaded successfully (dimension: 384)
+2025-11-12 14:59:11,221 - WARNING - python-dotenv could not parse statement starting at line 3
+2025-11-12 14:59:11,221 - WARNING - python-dotenv could not parse statement starting at line 5
+2025-11-12 14:59:11,222 - WARNING - python-dotenv could not parse statement starting at line 7
+2025-11-12 14:59:11,222 - WARNING - python-dotenv could not parse statement starting at line 8
+2025-11-12 14:59:11,222 - WARNING - python-dotenv could not parse statement starting at line 10
+2025-11-12 14:59:11,222 - WARNING - python-dotenv could not parse statement starting at line 11
+2025-11-12 14:59:11,222 - WARNING - python-dotenv could not parse statement starting at line 14
+2025-11-12 14:59:11,223 - WARNING - python-dotenv could not parse statement starting at line 15
+2025-11-12 14:59:11,223 - WARNING - python-dotenv could not parse statement starting at line 16
+2025-11-12 14:59:11,223 - WARNING - python-dotenv could not parse statement starting at line 17
+2025-11-12 14:59:11,223 - WARNING - python-dotenv could not parse statement starting at line 18
+2025-11-12 14:59:11,223 - WARNING - python-dotenv could not parse statement starting at line 21
+2025-11-12 14:59:11,223 - WARNING - python-dotenv could not parse statement starting at line 22
+2025-11-12 14:59:11,224 - WARNING - python-dotenv could not parse statement starting at line 23
+2025-11-12 14:59:11,224 - WARNING - python-dotenv could not parse statement starting at line 24
+2025-11-12 14:59:11,224 - WARNING - python-dotenv could not parse statement starting at line 25
+2025-11-12 14:59:11,224 - WARNING - python-dotenv could not parse statement starting at line 28
+2025-11-12 14:59:11,224 - WARNING - python-dotenv could not parse statement starting at line 29
+2025-11-12 14:59:11,224 - WARNING - python-dotenv could not parse statement starting at line 30
+2025-11-12 14:59:11,224 - WARNING - python-dotenv could not parse statement starting at line 31
+2025-11-12 14:59:11,224 - WARNING - python-dotenv could not parse statement starting at line 32
+2025-11-12 14:59:11,224 - WARNING - python-dotenv could not parse statement starting at line 35
+2025-11-12 14:59:11,225 - WARNING - python-dotenv could not parse statement starting at line 36
+2025-11-12 14:59:11,225 - WARNING - python-dotenv could not parse statement starting at line 37
+2025-11-12 14:59:11,225 - WARNING - python-dotenv could not parse statement starting at line 38
+2025-11-12 14:59:11,225 - WARNING - python-dotenv could not parse statement starting at line 39
+2025-11-12 14:59:11,225 - WARNING - python-dotenv could not parse statement starting at line 42
+2025-11-12 14:59:11,225 - WARNING - python-dotenv could not parse statement starting at line 43
+2025-11-12 14:59:11,225 - WARNING - python-dotenv could not parse statement starting at line 45
+2025-11-12 14:59:11,225 - WARNING - python-dotenv could not parse statement starting at line 46
+2025-11-12 14:59:11,226 - WARNING - python-dotenv could not parse statement starting at line 50
+2025-11-12 14:59:11,226 - WARNING - python-dotenv could not parse statement starting at line 51
+2025-11-12 14:59:11,226 - WARNING - python-dotenv could not parse statement starting at line 54
+2025-11-12 14:59:11,226 - WARNING - python-dotenv could not parse statement starting at line 58
+2025-11-12 14:59:11,226 - WARNING - python-dotenv could not parse statement starting at line 60
+2025-11-12 14:59:11,226 - WARNING - python-dotenv could not parse statement starting at line 61
+2025-11-12 14:59:11,226 - WARNING - python-dotenv could not parse statement starting at line 63
+2025-11-12 14:59:11,227 - WARNING - python-dotenv could not parse statement starting at line 64
+2025-11-12 14:59:11,227 - WARNING - python-dotenv could not parse statement starting at line 65
+2025-11-12 14:59:11,227 - WARNING - python-dotenv could not parse statement starting at line 67
+2025-11-12 14:59:11,227 - WARNING - python-dotenv could not parse statement starting at line 68
+2025-11-12 14:59:11,227 - WARNING - python-dotenv could not parse statement starting at line 69
+2025-11-12 14:59:11,227 - WARNING - python-dotenv could not parse statement starting at line 71
+2025-11-12 14:59:11,227 - WARNING - python-dotenv could not parse statement starting at line 72
+2025-11-12 14:59:11,227 - WARNING - python-dotenv could not parse statement starting at line 75
+2025-11-12 14:59:11,228 - WARNING - python-dotenv could not parse statement starting at line 77
+2025-11-12 14:59:11,228 - WARNING - python-dotenv could not parse statement starting at line 78
+2025-11-12 14:59:11,228 - WARNING - python-dotenv could not parse statement starting at line 79
+2025-11-12 14:59:11,228 - WARNING - python-dotenv could not parse statement starting at line 82
+2025-11-12 14:59:11,229 - WARNING - python-dotenv could not parse statement starting at line 83
+2025-11-12 14:59:11,229 - WARNING - python-dotenv could not parse statement starting at line 84
+2025-11-12 14:59:11,229 - WARNING - python-dotenv could not parse statement starting at line 85
+2025-11-12 14:59:11,229 - WARNING - python-dotenv could not parse statement starting at line 86
+2025-11-12 14:59:11,229 - WARNING - python-dotenv could not parse statement starting at line 88
+2025-11-12 14:59:11,229 - WARNING - python-dotenv could not parse statement starting at line 89
+2025-11-12 14:59:11,229 - WARNING - python-dotenv could not parse statement starting at line 91
+2025-11-12 14:59:11,230 - WARNING - python-dotenv could not parse statement starting at line 92
+2025-11-12 14:59:11,230 - WARNING - python-dotenv could not parse statement starting at line 96
+2025-11-12 14:59:11,230 - WARNING - python-dotenv could not parse statement starting at line 97
+2025-11-12 14:59:11,230 - WARNING - python-dotenv could not parse statement starting at line 98
+2025-11-12 14:59:11,230 - WARNING - python-dotenv could not parse statement starting at line 102
+2025-11-12 14:59:11,230 - WARNING - python-dotenv could not parse statement starting at line 104
+2025-11-12 14:59:11,231 - WARNING - python-dotenv could not parse statement starting at line 105
+2025-11-12 14:59:11,231 - WARNING - python-dotenv could not parse statement starting at line 106
+2025-11-12 14:59:11,231 - WARNING - python-dotenv could not parse statement starting at line 107
+2025-11-12 14:59:11,231 - WARNING - python-dotenv could not parse statement starting at line 109
+2025-11-12 14:59:11,231 - WARNING - python-dotenv could not parse statement starting at line 115
+2025-11-12 14:59:11,232 - WARNING - python-dotenv could not parse statement starting at line 118
+2025-11-12 14:59:11,232 - WARNING - python-dotenv could not parse statement starting at line 120
+2025-11-12 14:59:11,232 - WARNING - python-dotenv could not parse statement starting at line 121
+2025-11-12 14:59:11,232 - WARNING - python-dotenv could not parse statement starting at line 122
+2025-11-12 14:59:11,232 - WARNING - python-dotenv could not parse statement starting at line 124
+2025-11-12 14:59:11,232 - WARNING - python-dotenv could not parse statement starting at line 125
+2025-11-12 14:59:11,232 - WARNING - python-dotenv could not parse statement starting at line 126
+2025-11-12 14:59:11,232 - WARNING - python-dotenv could not parse statement starting at line 128
+2025-11-12 14:59:11,232 - WARNING - python-dotenv could not parse statement starting at line 129
+2025-11-12 14:59:11,233 - WARNING - python-dotenv could not parse statement starting at line 131
+2025-11-12 14:59:11,233 - WARNING - python-dotenv could not parse statement starting at line 132
+2025-11-12 14:59:11,233 - WARNING - python-dotenv could not parse statement starting at line 134
+2025-11-12 14:59:11,233 - WARNING - python-dotenv could not parse statement starting at line 136
+2025-11-12 14:59:11,233 - WARNING - python-dotenv could not parse statement starting at line 145
+2025-11-12 14:59:11,233 - WARNING - python-dotenv could not parse statement starting at line 146
+2025-11-12 14:59:11,233 - WARNING - python-dotenv could not parse statement starting at line 150
+2025-11-12 14:59:11,234 - WARNING - python-dotenv could not parse statement starting at line 151
+2025-11-12 14:59:11,234 - WARNING - python-dotenv could not parse statement starting at line 155
+2025-11-12 14:59:11,234 - WARNING - python-dotenv could not parse statement starting at line 156
+2025-11-12 14:59:11,234 - WARNING - python-dotenv could not parse statement starting at line 160
+2025-11-12 14:59:11,234 - WARNING - python-dotenv could not parse statement starting at line 161
+2025-11-12 14:59:11,234 - WARNING - python-dotenv could not parse statement starting at line 162
+2025-11-12 14:59:11,235 - WARNING - python-dotenv could not parse statement starting at line 166
+2025-11-12 14:59:11,235 - WARNING - python-dotenv could not parse statement starting at line 167
+2025-11-12 14:59:11,235 - WARNING - python-dotenv could not parse statement starting at line 169
+2025-11-12 14:59:11,235 - WARNING - python-dotenv could not parse statement starting at line 170
+2025-11-12 14:59:11,235 - WARNING - python-dotenv could not parse statement starting at line 172
+2025-11-12 14:59:11,384 - INFO - Loading local embedding model: all-MiniLM-L6-v2
+2025-11-12 14:59:11,387 - INFO - Use pytorch device_name: cpu
+2025-11-12 14:59:11,387 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-12 14:59:15,267 - INFO - Model loaded successfully (dimension: 384)
+2025-11-12 14:59:15,392 - INFO - Local embedding model working correctly
+2025-11-12 14:59:15,393 - INFO -  University RAG Pipeline initialized
+2025-11-12 14:59:15,393 - INFO -  Using local embedding service
+2025-11-12 14:59:15,394 - INFO -  LLM available: False
+2025-11-12 14:59:15,394 - INFO -  Processing query: 'What are the admission requirements?'
+2025-11-12 14:59:15,394 - INFO -  Retrieving relevant chunks for: 'What are the admission requirements?...'
+2025-11-12 14:59:15,414 - INFO -  Trying category-specific search: admission
+2025-11-12 14:59:15,416 - INFO -  Found 10 category-specific results
+2025-11-12 14:59:15,416 - INFO -  Retrieved 10 relevant chunks
+2025-11-12 14:59:15,416 - INFO -  Prepared context with 6 chunks (~2949 tokens)
+2025-11-12 14:59:15,417 - INFO -  Query processed in 0.02s
+2025-11-12 14:59:44,934 - INFO - Loading local embedding model: all-MiniLM-L6-v2
+2025-11-12 14:59:44,937 - INFO - Use pytorch device_name: cpu
+2025-11-12 14:59:44,937 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-12 14:59:49,189 - INFO - Model loaded successfully (dimension: 384)
+2025-11-12 14:59:49,325 - INFO - Local embedding model working correctly
+2025-11-12 14:59:49,327 - INFO -  University RAG Pipeline initialized
+2025-11-12 14:59:49,327 - INFO -  Using local embedding service
+2025-11-12 14:59:49,328 - INFO -  LLM available: False

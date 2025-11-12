@@ -7,8 +7,10 @@ import logging
 import json
 import time
 import re
-from src.embedding_service import get_embedding_service
-from src.vector_store import UniversityVectorStore
+# Corrected relative import
+from .embedding_service import get_embedding_service
+# Corrected relative import
+from .vector_store import UniversityVectorStore
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -47,8 +49,13 @@ class UniversityRAGPipeline:
         # Initialize OpenAI client for LLM
         openai_key = os.getenv("OPENAI_API_KEY")
         if openai_key and not use_local_embeddings:
-            self.openai_client = openai.OpenAI(api_key=openai_key)
-            self.use_openai_llm = True
+            try:
+                self.openai_client = openai.OpenAI(api_key=openai_key)
+                self.use_openai_llm = True
+            except Exception as e:
+                print(f"Failed to initialize OpenAI client: {e}")
+                self.openai_client = None
+                self.use_openai_llm = False
         else:
             self.openai_client = None
             self.use_openai_llm = False
@@ -79,21 +86,19 @@ class UniversityRAGPipeline:
         }
         
         # Statistics
-        self.stats = {
-            'total_queries': 0,
-            'successful_responses': 0,
-            'fallback_responses': 0,
-            'average_response_time': 0.0,
-            'total_tokens_used': 0,
-            'cache_hits': 0
-        }
+        self.total_queries = 0
+        self.successful_responses = 0
+        self.fallback_responses = 0
+        self.total_response_time = 0.0
+        self.total_tokens = 0
+        self.cache_hits = 0
         
         self.logger.info(" University RAG Pipeline initialized")
         self.logger.info(f" Using {getattr(self, 'service_type', 'unknown')} embedding service")
         self.logger.info(f" LLM available: {self.use_openai_llm}")
     
     def retrieve_relevant_chunks(self, query: str, n_results: int = None,
-                               use_category_filter: bool = True) -> Dict[str, Any]:
+                                 use_category_filter: bool = True) -> Dict[str, Any]:
         """Retrieve relevant document chunks for query with smart filtering"""
         if n_results is None:
             n_results = self.max_context_chunks
@@ -178,7 +183,7 @@ class UniversityRAGPipeline:
             if score >= self.min_similarity_score
         ]
         
-        if not good_indices:
+        if not good_indices and results.get('scores'):
             # If no results meet threshold, take the best one
             best_idx = results['scores'].index(max(results['scores']))
             good_indices = [best_idx]
@@ -194,7 +199,7 @@ class UniversityRAGPipeline:
         return filtered
     
     def prepare_context(self, chunks: List[str], metadatas: List[Dict], 
-                       max_tokens: int = None) -> Tuple[str, List[str]]:
+                        max_tokens: int = None) -> Tuple[str, List[str]]:
         """Prepare context string from retrieved chunks with source tracking"""
         if max_tokens is None:
             max_tokens = self.max_context_tokens
@@ -226,7 +231,7 @@ class UniversityRAGPipeline:
     def generate_answer(self, query: str, context: str) -> Tuple[str, int]:
         """Generate answer using LLM with university-specific prompt"""
         
-        if not self.use_openai_llm:
+        if not self.use_openai_llm or not self.openai_client:
             return self._generate_fallback_answer(query, context), 0
         
         # University-specific system prompt
@@ -296,10 +301,12 @@ Please provide a comprehensive answer based on the information above. If the inf
         
         return answer
     
-    def process_query(self, query: str, include_sources: bool = True) -> RAGResponse:
-        """Main method to process a query through the complete RAG pipeline"""
+    # This is the function the interface files (cli_app, etc.) are calling
+    def query(self, query: str, include_sources: bool = True) -> RAGResponse:
+        """Main method to process a query through the complete RAG pipeline."""
         start_time = time.time()
-        self.stats['total_queries'] += 1
+        
+        self.total_queries += 1
         
         self.logger.info(f" Processing query: '{query}'")
         
@@ -311,7 +318,8 @@ Please provide a comprehensive answer based on the information above. If the inf
                 # No relevant documents found
                 answer = "I couldn't find relevant information in the University of Sargodha documents to answer your question. Please contact the appropriate university office for specific information."
                 
-                self.stats['fallback_responses'] += 1
+                self.fallback_responses += 1
+                
                 response_time = time.time() - start_time
                 
                 return RAGResponse(
@@ -338,12 +346,9 @@ Please provide a comprehensive answer based on the information above. If the inf
             response_time = time.time() - start_time
             
             # Update statistics
-            self.stats['successful_responses'] += 1
-            self.stats['total_tokens_used'] += tokens_used
-            self.stats['average_response_time'] = (
-                (self.stats['average_response_time'] * (self.stats['total_queries'] - 1) + response_time) / 
-                self.stats['total_queries']
-            )
+            self.successful_responses += 1
+            self.total_tokens += tokens_used
+            self.total_response_time += response_time
             
             response = RAGResponse(
                 answer=answer,
@@ -363,7 +368,8 @@ Please provide a comprehensive answer based on the information above. If the inf
             self.logger.error(f" Error processing query: {e}")
             
             response_time = time.time() - start_time
-            self.stats['fallback_responses'] += 1
+            
+            self.fallback_responses += 1
             
             return RAGResponse(
                 answer=f"I encountered an error while processing your question: {str(e)}. Please try again or contact university support.",
@@ -396,63 +402,41 @@ Please provide a comprehensive answer based on the information above. If the inf
         context_str = "\n".join(context_parts)
         
         enhanced_query = f"""Previous conversation context:
-
-    def query(self, query: str, include_sources: bool = True) -> RAGResponse:
-        """Alias for process_query to maintain compatibility with interfaces"""
-        return self.process_query(query, include_sources)
-
-    def get_pipeline_stats(self) -> Dict[str, Any]:
-        """Get pipeline statistics - alias for get_statistics"""
-        stats = self.get_statistics()
-
-        # Flatten structure for easier access
-        return {
-            'queries': {
-                'total_queries': stats['pipeline_stats']['total_queries'],
-                'successful_responses': stats['pipeline_stats']['successful_responses'],
-                'success_rate': float(str(stats['pipeline_stats']['success_rate']).rstrip('%'))
-            },
-            'performance': {
-                'average_response_time': float(str(stats['pipeline_stats']['average_response_time']).rstrip('s')),
-                'total_tokens_used': stats['pipeline_stats']['total_tokens_used'],
-                'average_tokens_per_query': stats['pipeline_stats']['total_tokens_used'] // max(1, stats['pipeline_stats']['total_queries'])
-            },
-            'configuration': stats['configuration'],
-            'vector_store': stats.get('vector_store_stats', {})
-        }
-    
 {context_str}
 
 Current question: {query}"""
         
         return enhanced_query
-    
-    def get_statistics(self) -> Dict[str, Any]:
-        """Get pipeline statistics"""
-        
-        # Get embedding service stats
-        embedding_stats = self.embedding_service.get_stats()
-        
-        # Get vector store stats
-        vector_stats = self.vector_store.get_collection_stats()
-        
-        return {
-            'pipeline_stats': {
-                'total_queries': self.stats['total_queries'],
-                'successful_responses': self.stats['successful_responses'],
-                'fallback_responses': self.stats['fallback_responses'],
-                'success_rate': f"{(self.stats['successful_responses'] / max(1, self.stats['total_queries'])) * 100:.1f}%",
-                'average_response_time': f"{self.stats['average_response_time']:.3f}s",
-                'total_tokens_used': self.stats['total_tokens_used']
+
+    # This is the function the app is looking for, now with the bugs fixed
+    def get_pipeline_stats(self):
+        """Returns a dictionary of pipeline statistics"""
+        avg_response_time = (self.total_response_time / self.total_queries) if self.total_queries > 0 else 0
+        success_rate = (self.successful_responses / self.total_queries) * 100 if self.total_queries > 0 else 0
+        avg_tokens = (self.total_tokens / self.total_queries) if self.total_queries > 0 else 0
+
+        try:
+            vs_stats = self.vector_store.get_collection_stats()
+        except Exception:
+            vs_stats = {"error": "Could not get vector store stats"}
+
+        stats = {
+            "queries": {
+                "total_queries": self.total_queries,
+                "successful_responses": self.successful_responses,
+                "success_rate": success_rate,
             },
-            'embedding_stats': embedding_stats,
-            'vector_store_stats': vector_stats,
-            'configuration': {
-                'embedding_service': getattr(self, 'service_type', 'unknown'),
-                'llm_model': self.llm_model,
-                'llm_available': self.use_openai_llm,
-                'max_context_chunks': self.max_context_chunks,
-                'max_context_tokens': self.max_context_tokens,
-                'min_similarity_score': self.min_similarity_score
-            }
+            "performance": {
+                "average_response_time": avg_response_time,
+                "total_tokens_used": self.total_tokens,
+                "average_tokens_per_query": avg_tokens,
+            },
+            "configuration": {
+                "embedding_service": getattr(self.embedding_service, 'service_type', 'unknown'),
+                "llm_available": self.use_openai_llm,
+                "llm_model": self.llm_model,
+                "max_context_chunks": self.max_context_chunks,
+            },
+            "vector_store": vs_stats
         }
+        return stats
